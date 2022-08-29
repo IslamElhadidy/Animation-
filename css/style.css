@@ -1,0 +1,150 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    background: #000;
+}
+.container{
+    position: relative;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    -webkit-box-reflect: below 20px linear-gradient(#0001, #0004);
+}
+h2{
+    color: white;
+    position: absolute;
+    top: 51px;
+    
+    font-family: sans-serif;
+    z-index: 100;
+    font-family: 'Poppins', sans-serif;
+    width: 350px;
+    animation: con-width 4s steps(30) 0s both infinite , blink 0.5s infinite; 
+    overflow: hidden;
+    white-space: nowrap;
+    border-right: 2px solid white;
+    height: 30px;
+    font-size: 20px;
+}
+
+@media (max-width:767px) {
+    h2 {
+        top: 88px;
+    }
+}
+
+@keyframes con-width {
+    from {  
+        width: 0px;
+    }
+
+    to {
+        width: 350px;
+    }
+}
+
+@keyframes blink {
+    from {  
+        border-right-color: var(--Main-Color);
+    }
+
+    to {
+        border-right-color:transparent;
+    }
+}
+.container .loader{
+    position: relative;
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    background: #000;
+    animation: animate 2s linear infinite;
+}
+.container .loader::before{
+    content: '';
+    position: absolute;
+    top: 0;left: 0;
+    width: 50%;
+    height: 100%;
+    background: linear-gradient(to top, transparent, white);
+  /*  background: linear-gradient(to top, transparent, rgba(0, 255, 249, .4));  00fff9 */
+    background-size: 100px 150px;
+    background-repeat: no-repeat;
+    border-top-left-radius: 100px;
+    border-bottom-left-radius: 100px;
+}
+.container .loader::after{
+    content: '';
+    position: absolute;
+    top: 0;left: 50%;
+    transform: translateX(-50%);
+    width: 20px;
+    height: 20px;
+    background: white;
+    border-radius: 50%;
+    z-index: 10;
+    box-shadow: 0 0 10px white,
+    0 0 20px white,
+    0 0 30px white,
+    0 0 40px white,
+    0 0 50px white,
+    0 0 60px white,
+    0 0 70px white,
+    0 0 80px white,
+    0 0 90px white,
+    0 0 100px white,
+    0 0 110px white,
+    0 0 120px rgb(255, 255, 255),
+    0 0 130px rgb(255, 255, 255),
+    0 0 140px rgb(255, 255, 255),
+    0 0 150px #ffffff,
+    0 0 160px #ffffff,
+    0 0 170px rgb(255, 255, 255),
+    0 0 180px #ffffff,
+    0 0 190px #ffffff,
+    0 0 200px rgb(255, 255, 255);
+
+}
+.container .loader span{
+    position: absolute;
+    top: 20px;bottom: 20px;
+    left: 20px;right: 20px;
+    background: #000;
+    border-radius: 50%;
+}
+ @keyframes animate {
+    0%{
+        transform: rotate(0deg);
+    }
+    100%{
+        transform: rotate(360deg);
+    }
+} 
+
+.signture {
+    z-index: 100;
+    color: white;
+    top: 20px;
+    left: 18px;
+    position: absolute;
+    font-size: 14px;
+    font-family: 'Pacifico', cursive;
+
+}
+.signture i {
+    font-weight: 900;
+    font-weight: 900;
+    top: 12px;
+    right: -23px;
+    position: absolute;
+
+
+}
